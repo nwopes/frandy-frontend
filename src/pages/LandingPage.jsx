@@ -155,6 +155,7 @@ const LandingPage = () => {
               <Card className="p-6 border-2 shadow-xl" style={{ borderColor: '#61525a' }}>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1e1919' }}>
                   Free Pre-Order
+                  <br />
                   <span className="text-base font-medium">No Payment Required</span>
                 </h3>
                 <div className="flex flex-col sm:flex-row gap-3">
