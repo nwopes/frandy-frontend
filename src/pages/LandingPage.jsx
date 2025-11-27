@@ -24,7 +24,6 @@ import {
 } from 'lucide-react';
 import { productFeatures, howItWorks, vitamins, testimonials, faqs } from '../mockData';
 import { useToast } from '../hooks/use-toast';
-import ChatWidget from '../components/ChatWidget';
 import HealthQuiz from '../components/HealthQuiz';
 import { supabase } from '../supabaseClient';
 
@@ -483,8 +482,6 @@ const LandingPage = () => {
         </div>
       </footer>
 
-      {/* Chat Widget */}
-      <ChatWidget />
     </div>
   );
 };
