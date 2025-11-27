@@ -143,7 +143,7 @@ const LandingPage = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  <span className="text-sm font-medium">Berry Blast Flavor</span>
+                  <span className="text-sm font-medium">Berry Blast Flavour</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-green-600" />
