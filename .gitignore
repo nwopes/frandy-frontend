@@ -1,18 +1,19 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+# --- DEPENDENCIES ---
+node_modules/
+.pnp/
 .pnp.js
 
-# testing
-/coverage
+# --- TESTING ---
+coverage/
 
-# production
-/build
+# --- PRODUCTION ---
+build/
 
-# misc
+# --- MISC / ENV FILES ---
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -21,3 +22,94 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# --- OS FILES ---
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux temp files
+*~
+
+# --- GENERAL ---
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+
+# --- JAVA / JVM ---
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+target/
+out/
+
+# --- DOTNET / C# ---
+bin/
+obj/
+*.user
+*.suo
+*.exe
+*.dll
+
+# --- RUST ---
+target/
+# Remove next line if you want to track Cargo.lock
+Cargo.lock
+
+# --- GO ---
+bin/
+*.exe
+
+# --- DATABASE ---
+*.sqlite
+*.sqlite3
+*.db
+
+# --- IDEs & EDITORS ---
+# VS Code
+.vscode/
+.history/
+
+# JetBrains (IntelliJ, PyCharm, WebStorm…)
+.idea/
+*.iws
+*.ipr
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# --- MISC ---
+coverage/
+.cache/
+tmp/
+temp/
+logs/
