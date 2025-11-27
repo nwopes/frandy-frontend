@@ -318,44 +318,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#1e1919' }}>
-              What People Are Saying
-            </h2>
-            <p className="text-xl" style={{ color: '#736c64' }}>
-              Join thousands of happy customers
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="hover:shadow-xl transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="mb-6 text-base" style={{ color: '#1e1919' }}>
-                    "{testimonial.content}"
-                  </p>
-                  <div>
-                    <p className="font-semibold" style={{ color: '#1e1919' }}>
-                      {testimonial.name}
-                    </p>
-                    <p className="text-sm" style={{ color: '#736c64' }}>
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Pre-Order CTA Section */}
       <section id="preorder-section" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1e1919' }}>
