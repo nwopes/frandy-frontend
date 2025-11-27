@@ -66,27 +66,19 @@ const LandingPage = () => {
 
       const recordId = data[0].id;
 
-      // 2. Send welcome email via API
+      // 2. Send welcome email via API (Backend handles the status update now)
       const response = await fetch('/api/send-welcome-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailValue }),
+        body: JSON.stringify({ email: emailValue, recordId: recordId }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(`Email Server Error: ${errorData.error || response.statusText}`);
       }
-
-      // 3. If email sent successfully, update the record
-      const { error: updateError } = await supabase
-        .from('emails')
-        .update({ email_sent: true })
-        .eq('id', recordId);
-
-      if (updateError) console.error('Failed to update status:', updateError);
 
       toast({
         title: 'Pre-Order Confirmed! 🎉',

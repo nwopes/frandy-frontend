@@ -1,4 +1,11 @@
 const nodemailer = require('nodemailer');
+const { createClient } = require('@supabase/supabase-js');
+
+// Initialize Supabase Admin Client (Service Role)
+const supabaseAdmin = createClient(
+    process.env.REACT_APP_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
 module.exports = async (req, res) => {
     // CORS headers
@@ -20,7 +27,7 @@ module.exports = async (req, res) => {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const { email } = req.body;
+    const { email, recordId } = req.body;
 
     if (!email) {
         return res.status(400).json({ error: 'Email is required' });
@@ -56,6 +63,18 @@ module.exports = async (req, res) => {
         };
 
         await transporter.sendMail(mailOptions);
+
+        // Update Supabase record if recordId is provided
+        if (recordId) {
+            const { error: updateError } = await supabaseAdmin
+                .from('emails')
+                .update({ email_sent: true })
+                .eq('id', recordId);
+
+            if (updateError) {
+                console.error('Failed to update Supabase record:', updateError);
+            }
+        }
 
         return res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
