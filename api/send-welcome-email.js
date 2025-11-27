@@ -27,13 +27,37 @@ module.exports = async (req, res) => {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const { email, recordId } = req.body;
+    const { email, source } = req.body;
 
     if (!email) {
         return res.status(400).json({ error: 'Email is required' });
     }
 
     try {
+        // 1. Insert into Supabase (using Admin Client)
+        // We insert first to capture the lead even if email fails
+        const { data, error: insertError } = await supabaseAdmin
+            .from('emails')
+            .insert([
+                {
+                    email,
+                    source: source || 'unknown',
+                    email_sent: false // Will update to true after sending
+                }
+            ])
+            .select()
+            .single();
+
+        if (insertError) {
+            console.error('Database Insert Error:', insertError);
+            // We continue to try sending email even if DB fails? 
+            // Or throw? Let's throw to report error.
+            throw new Error(`Database Error: ${insertError.message}`);
+        }
+
+        const recordId = data.id;
+
+        // 2. Send Email
         const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST,
             port: process.env.SMTP_PORT,
@@ -64,21 +88,19 @@ module.exports = async (req, res) => {
 
         await transporter.sendMail(mailOptions);
 
-        // Update Supabase record if recordId is provided
-        if (recordId) {
-            const { error: updateError } = await supabaseAdmin
-                .from('emails')
-                .update({ email_sent: true })
-                .eq('id', recordId);
+        // 3. Update Supabase record to mark email as sent
+        const { error: updateError } = await supabaseAdmin
+            .from('emails')
+            .update({ email_sent: true })
+            .eq('id', recordId);
 
-            if (updateError) {
-                console.error('Failed to update Supabase record:', updateError);
-            }
+        if (updateError) {
+            console.error('Failed to update Supabase record:', updateError);
         }
 
-        return res.status(200).json({ message: 'Email sent successfully' });
+        return res.status(200).json({ message: 'Success' });
     } catch (error) {
-        console.error('Error sending email:', error);
-        return res.status(500).json({ error: 'Failed to send email', details: error.message });
+        console.error('Process failed:', error);
+        return res.status(500).json({ error: 'Failed to process request', details: error.message });
     }
 };

@@ -56,28 +56,18 @@ const LandingPage = () => {
     setIsSubmitting(true);
 
     try {
-      // 1. Insert into Supabase (initially marked as not sent)
-      const { data, error: insertError } = await supabase
-        .from('emails')
-        .insert([{ email: emailValue, source: source, email_sent: false }])
-        .select();
-
-      if (insertError) throw new Error(`Database Error: ${insertError.message}`);
-
-      const recordId = data[0].id;
-
-      // 2. Send welcome email via API (Backend handles the status update now)
+      // 1. Send to API (which handles Database + Email)
       const response = await fetch('/api/send-welcome-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailValue, recordId: recordId }),
+        body: JSON.stringify({ email: emailValue, source: source }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(`Email Server Error: ${errorData.error || response.statusText}`);
+        throw new Error(`Server Error: ${errorData.error || response.statusText}`);
       }
 
       toast({
