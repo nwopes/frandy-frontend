@@ -9,7 +9,7 @@ export const productFeatures = [
   },
   {
     id: 2,
-    title: "Berry Blast Flavor",
+    title: "Berry Blast Flavour",
     description: "Delicious mix of strawberries and blueberries in every bite.",
     icon: "Cherry"
   },
@@ -42,7 +42,7 @@ export const productFeatures = [
 export const howItWorks = [
   {
     step: 1,
-    title: "Pre-Order Free",
+    title: "Free Pre-Order",
     description: "Reserve your bottle with just your email. No payment required."
   },
   {
@@ -71,7 +71,7 @@ export const testimonials = [
     id: 1,
     name: "Sarah Mitchell",
     role: "Wellness Enthusiast",
-    content: "Finally, a multivitamin that doesn't taste like medicine! The berry flavor is incredible, and I actually look forward to taking them daily.",
+    content: "Finally, a multivitamin that doesn't taste like medicine! The berry flavour is incredible, and I actually look forward to taking them daily.",
     rating: 5
   },
   {
@@ -93,7 +93,7 @@ export const testimonials = [
 export const faqs = [
   {
     question: "What makes Frandy different from other multivitamins?",
-    answer: "Frandy is 100% plant-based, naturally sweetened with monk fruit, and colored with real fruit extracts. No artificial ingredients, just pure nutrition with an amazing berry blast flavor."
+    answer: "Frandy is 100% plant-based, naturally sweetened with monk fruit, and colored with real fruit extracts. No artificial ingredients, just pure nutrition with an amazing berry blast flavour."
   },
   {
     question: "How many gummies should I take per day?",
@@ -119,7 +119,7 @@ export const faqs = [
 
 export const mockChatResponses = [
   "Thanks for your interest in Frandy! Our Berry Blast gummies are packed with 15 essential vitamins. What would you like to know?",
-  "Great question! Frandy contains Vitamins A, C, D3, E, B-Complex (B1, B2, B3, B5, B6, B12), B7(Biotin), and minerals like Zinc. All in delicious berry flavor!",
+  "Great question! Frandy contains Vitamins A, C, D3, E, B-Complex (B1, B2, B3, B5, B6, B12), B7(Biotin), and minerals like Zinc. All in delicious berry flavour!",
   "Pre-ordering is super easy and completely free! Just enter your email above, and you'll be the first to know when we launch.",
   "Absolutely! Frandy is 100% plant-based and vegan-friendly. We use pectin instead of gelatin."
 ];

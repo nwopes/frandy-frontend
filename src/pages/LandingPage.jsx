@@ -108,7 +108,7 @@ const LandingPage = () => {
                 onClick={() => document.getElementById('preorder-section').scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white"
               >
-                Pre-Order Free
+                Free Pre-Order
               </Button>
             </nav>
           </div>
@@ -154,7 +154,7 @@ const LandingPage = () => {
               {/* Hero Pre-Order Form */}
               <Card className="p-6 border-2 shadow-xl" style={{ borderColor: '#61525a' }}>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1e1919' }}>
-                  Pre-Order Free - No Payment Required
+                  Free Pre-Order - No Payment Required
                 </h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Input
@@ -238,7 +238,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#1e1919' }}>
-              How Pre-Ordering Works
+              How Pre-Order Works
             </h2>
             <p className="text-xl" style={{ color: '#736c64' }}>
               Three simple steps to wellness
