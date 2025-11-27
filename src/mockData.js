@@ -58,12 +58,12 @@ export const howItWorks = [
 ];
 
 export const vitamins = [
-  { name: "Vitamin A", amount: "900 mcg", benefit: "Vision & Immune" },
-  { name: "Vitamin C", amount: "90 mg", benefit: "Antioxidant Power" },
-  { name: "Vitamin D3", amount: "20 mcg", benefit: "Bone & Mood" },
-  { name: "Vitamin E", amount: "15 mg", benefit: "Skin Health" },
-  { name: "B-Complex", amount: "Full Spectrum", benefit: "Energy & Focus" },
-  { name: "Zinc", amount: "11 mg", benefit: "Immune Support" }
+  { name: "Vitamin A", amount: "400 mcg", benefit: "Vision & Immune" },
+  { name: "Vitamin C", amount: "43 mg", benefit: "Antioxidant Power" },
+  { name: "Vitamin D3", amount: "120 IU", benefit: "Bone & Mood" },
+  { name: "Vitamin E", amount: "5 mg", benefit: "Skin Health" },
+  { name: "Vitamin B7", amount: "40 mcg", benefit: "Hair & Skin" },
+  { name: "Zinc", amount: "4 mg", benefit: "Immune Support" }
 ];
 
 export const testimonials = [
