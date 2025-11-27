@@ -75,7 +75,7 @@ module.exports = async (req, res) => {
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h1 style="color: #e11d48;">Welcome to Frandy! 🎉</h1>
-          <p>Hi there!</p>
+          <p>Hi There!</p>
           <p>Thank you so much for pre-ordering <strong>Frandy Berry Blast Gummies</strong>! We’re thrilled to have you with us on this journey toward a healthier (and tastier) daily routine.</p>
           <p>You’re officially on our VIP list, which means you’ll be among the first to try our plant-based multivitamin gummies before they hit the shelves. Healthy but delicious? Yep — that’s exactly our vibe. 🍓✨</p>
           <p>We’ll keep you posted on the launch date, shipping updates, and some exclusive early-bird perks headed your way.</p>

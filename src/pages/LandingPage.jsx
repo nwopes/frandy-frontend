@@ -96,7 +96,7 @@ const LandingPage = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-2xl font-bold tracking-tight" style={{ color: '#61525a' }}>
+            <div className="text-3xl font-brand tracking-wider" style={{ color: '#61525a' }}>
               FRANDY
             </div>
             <nav className="hidden md:flex items-center gap-8">
@@ -156,7 +156,7 @@ const LandingPage = () => {
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1e1919' }}>
                   Free Pre-Order
                   <br />
-                  No Payment Required
+                  No Payment Required!
                 </h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Input
