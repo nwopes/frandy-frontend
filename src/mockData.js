@@ -10,13 +10,13 @@ export const productFeatures = [
   {
     id: 2,
     title: "Berry Blast Flavor",
-    description: "Delicious mix of strawberries, blueberries, and raspberries in every bite.",
+    description: "Delicious mix of strawberries and blueberries in every bite.",
     icon: "Cherry"
   },
   {
     id: 3,
     title: "Complete Nutrition",
-    description: "12 essential vitamins including A, C, D, E, B-Complex, and minerals.",
+    description: "15 essential vitamins including A, C, D, E, B7(Biotin), and minerals.",
     icon: "Sparkles"
   },
   {
@@ -118,8 +118,8 @@ export const faqs = [
 ];
 
 export const mockChatResponses = [
-  "Thanks for your interest in Frandy! Our Berry Blast gummies are packed with 12 essential vitamins. What would you like to know?",
-  "Great question! Frandy contains Vitamins A, C, D3, E, B-Complex (B1, B2, B3, B5, B6, B12), and minerals like Zinc. All in delicious berry flavor!",
+  "Thanks for your interest in Frandy! Our Berry Blast gummies are packed with 15 essential vitamins. What would you like to know?",
+  "Great question! Frandy contains Vitamins A, C, D3, E, B-Complex (B1, B2, B3, B5, B6, B12), B7(Biotin), and minerals like Zinc. All in delicious berry flavor!",
   "Pre-ordering is super easy and completely free! Just enter your email above, and you'll be the first to know when we launch.",
   "Absolutely! Frandy is 100% plant-based and vegan-friendly. We use pectin instead of gelatin."
 ];

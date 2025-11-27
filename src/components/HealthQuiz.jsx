@@ -63,12 +63,12 @@ const HealthQuiz = () => {
       'vegan': 'As a plant-based eater, you\'ll love that Frandy is 100% vegan and provides essential vitamins that can be harder to get from plants alone, like B12 and D3.',
       'energy': 'Frandy\'s comprehensive B-vitamin complex and iron support are specifically designed to combat fatigue and boost natural energy levels throughout your day.',
       'immunity': 'With Vitamins C, D3, and Zinc, Frandy provides the immune-supporting nutrients your body needs to stay healthy year-round.',
-      'default': 'Based on your lifestyle, Frandy Berry Blast gummies are an excellent choice! Our complete multivitamin formula with 12 essential nutrients will support your daily wellness goals.'
+      'default': 'Based on your lifestyle, Frandy Berry Blast gummies are an excellent choice! Our complete multivitamin formula with 15 essential nutrients will support your daily wellness goals.'
     };
 
     const primaryAnswer = answers.lifestyle || answers.diet || answers.goals || 'default';
     const recommendation = recommendations[primaryAnswer] || recommendations.default;
-    
+
     setAiRecommendation(recommendation);
     setShowResult(true);
   };
@@ -89,11 +89,11 @@ const HealthQuiz = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center mx-auto">
                 <Sparkles className="w-10 h-10 text-white" />
               </div>
-              
+
               <h3 className="text-3xl md:text-4xl font-bold" style={{ color: '#1e1919' }}>
                 AI Recommendation: Frandy is Perfect for You!
               </h3>
-              
+
               <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6">
                 <p className="text-lg leading-relaxed" style={{ color: '#1e1919' }}>
                   {aiRecommendation}
@@ -167,11 +167,10 @@ const HealthQuiz = () => {
               {questions[step].options.map((option) => (
                 <div
                   key={option.value}
-                  className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all hover:border-red-300 hover:bg-red-50 ${
-                    answers[questions[step].id] === option.value
+                  className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all hover:border-red-300 hover:bg-red-50 ${answers[questions[step].id] === option.value
                       ? 'border-red-500 bg-red-50'
                       : 'border-gray-200'
-                  }`}
+                    }`}
                   onClick={() => handleAnswer(option.value)}
                 >
                   <RadioGroupItem value={option.value} id={option.value} />

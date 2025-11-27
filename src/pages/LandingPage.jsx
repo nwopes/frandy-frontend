@@ -132,7 +132,7 @@ const LandingPage = () => {
               </h1>
 
               <p className="text-xl md:text-2xl" style={{ color: '#736c64' }}>
-                Delicious multivitamin gummies packed with 12 essential vitamins.
+                Delicious multivitamin gummies packed with 15 essential vitamins.
                 100% plant-based. Naturally sweetened. Zero artificial ingredients.
               </p>
 
@@ -276,7 +276,7 @@ const LandingPage = () => {
               Complete Nutrition in Every Bite
             </h2>
             <p className="text-xl" style={{ color: '#736c64' }}>
-              12 essential vitamins and minerals
+              15 essential vitamins and minerals
             </p>
           </div>
 
