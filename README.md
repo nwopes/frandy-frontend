@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Frandy - Plant-Based Multivitamin Gummies 🍓
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the official repository for the Frandy landing page! This project is a modern, responsive web application built to collect pre-orders for Frandy's upcoming launch.
 
-## Available Scripts
+## 🚀 Tech Stack
 
-In the project directory, you can run:
+-   **Frontend:** React (v18), Tailwind CSS, Lucide React
+-   **Backend:** Vercel Serverless Functions (Node.js)
+-   **Database:** Supabase (PostgreSQL)
+-   **Email:** Nodemailer (Gmail SMTP)
+-   **Deployment:** Vercel
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   **Beautiful UI:** Responsive design with a premium aesthetic.
+-   **Email Collection:** Users can sign up for the waitlist.
+-   **Secure Database:** Emails are stored securely in Supabase with Row Level Security (RLS).
+-   **Instant Notifications:** Users receive a custom "Thank You" email immediately upon signup.
+-   **Status Tracking:** The system tracks whether the welcome email was successfully sent.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Local Development
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Node.js (v18 or higher)
+-   npm
+-   Vercel CLI (`npm i -g vercel`)
 
-### `npm run build`
+### Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/nwopes/frandy-frontend.git
+    cd frandy-frontend/frontend
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.  **Configure Environment Variables:**
+    Create a `.env` file in the `frontend` directory with the following keys:
+    ```env
+    REACT_APP_SUPABASE_URL=your_supabase_url
+    REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+    SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+    SMTP_HOST=smtp.gmail.com
+    SMTP_PORT=465
+    SMTP_USER=your_email@gmail.com
+    SMTP_PASS=your_app_password
+    ```
 
-### `npm run eject`
+4.  **Run Locally:**
+    Since this project uses Vercel Serverless Functions, you must use `vercel dev` instead of `npm start`.
+    ```bash
+    vercel dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📦 Deployment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is optimized for deployment on **Vercel**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.  Push your code to GitHub.
+2.  Import the project into Vercel.
+3.  **Important:** Add all the environment variables from your `.env` file to the Vercel Project Settings.
+4.  Deploy!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔒 Security
 
-## Learn More
+-   **RLS (Row Level Security):** The Supabase `emails` table is protected.
+-   **Public Access:** Anonymous users can `INSERT` emails (via the backend API).
+-   **Private Access:** Only the backend API (using the Service Role Key) can `UPDATE` records.
+-   **Environment Variables:** Sensitive keys are never exposed to the client-side bundle (except the Anon key, which is safe).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📄 License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is proprietary to the Frandy Team.
