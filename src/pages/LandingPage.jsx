@@ -154,7 +154,8 @@ const LandingPage = () => {
               {/* Hero Pre-Order Form */}
               <Card className="p-6 border-2 shadow-xl" style={{ borderColor: '#61525a' }}>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1e1919' }}>
-                  Free Pre-Order - No Payment Required
+                  Free Pre-Order
+                  No Payment Required
                 </h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Input
